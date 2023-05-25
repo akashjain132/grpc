@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package amazon;
+
+message ProductID {
+    string id = 1;
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    int32 weight = 4;
+    int32 price = 5;
+}
+
+service ProductService {
+    rpc GetProduct(ProductID) returns (Product);
+}
